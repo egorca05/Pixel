@@ -70,8 +70,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Windows\AllWindow.xaml.cs">
-      <DependentUpon>AllWindow.xaml</DependentUpon>
+    <Compile Include="Windows\AutorizationWindow.xaml.cs">
+      <DependentUpon>AutorizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\KidFolder\MenuKidWindow.xaml.cs">
+      <DependentUpon>MenuKidWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\KidFolder\ResultKidWindow.xaml.cs">
+      <DependentUpon>ResultKidWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\KidFolder\Test1KidWindow.xaml.cs">
+      <DependentUpon>Test1KidWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\KidFolder\TestMenuKidWindow.xaml.cs">
+      <DependentUpon>TestMenuKidWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -101,16 +113,62 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Page Include="ResourcesFolder\Dictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AllWindow.xaml">
+    <Page Include="Windows\AutorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\KidFolder\MenuKidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\KidFolder\ResultKidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\KidFolder\Test1KidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\KidFolder\TestMenuKidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\AutImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataFolder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\icons8-logout_rounded_up 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Testing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\backBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Test2.png" />
+    <Resource Include="ResourcesFolder\Image\Test3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Test1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

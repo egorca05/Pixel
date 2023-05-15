@@ -11,17 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Pixel.Windows;
+using Pixel.Windows.KidFolder;
 
 namespace Pixel.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AllWindow.xaml
+    /// Логика взаимодействия для AutorizationWindow.xaml
     /// </summary>
-    public partial class AllWindow : Window
+    public partial class AutorizationWindow : Window
     {
-        public AllWindow()
+        public AutorizationWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoginBt_Click(object sender, RoutedEventArgs e)
+        {
+            Window kidwindow = new KidFolder.MenuKidWindow();
+            kidwindow.Show();
+            this.Close();
         }
     }
 }

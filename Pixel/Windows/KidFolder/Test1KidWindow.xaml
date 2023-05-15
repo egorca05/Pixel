@@ -1,0 +1,132 @@
+﻿<Window x:Class="Pixel.Windows.KidFolder.Test1KidWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pixel.Windows.KidFolder"
+        mc:Ignorable="d"
+        Title="Окно" Height="10000" Width="1290"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Border Background="#649CE6">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/ResourcesFolder/Image/Logo.png" 
+                       Margin="20"
+                       Height="49" Width="210"
+                       HorizontalAlignment="Left"/>
+                <Label 
+                    Content="Python"
+                    Grid.Column="1"
+                    Style="{StaticResource LabelLogo}"/>
+                
+
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <StackPanel>
+                    
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №1" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: fgfgfgfgfggfgfgfgfgffggfgfdgighoegnm vcbujhjemrfkfdgj 9 iojgoiej g,vmn oidfg jeggergfgdgdfgdfgdg dsfsdfgji mkhorf iurtegmp[sd nmeio jwe dfmiopfj</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q1" Content="Вариант 1"/>
+                                <RadioButton GroupName="q1" Content="Вариант 2" Grid.Column="1"/>
+                                <RadioButton GroupName="q1" Content="Вариант 3" Grid.Row="1"/>
+                                <RadioButton GroupName="q1" Content="Вариант 4" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №2" Style="{StaticResource H2Label}"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                    <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: fgfgfgfgfggfgfgfgfgffggfgfdgighoegnm vcbujhjemrfkfdgj 9 iojgoiej g,vmn oidfg jeggergfgdgdfgdfgdg dsfsdfgji mkhorf iurtegmp[sd nmeio jwe dfmiopfj</TextBlock>
+                                    </Label.Content>
+                                </Label>
+
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <RadioButton GroupName="q1" Content="Вариант 1"/>
+                                    <RadioButton GroupName="q1" Content="Вариант 2" Grid.Column="1"/>
+                                    <RadioButton GroupName="q1" Content="Вариант 3" Grid.Row="1"/>
+                                    <RadioButton GroupName="q1" Content="Вариант 4" Grid.Column="1" Grid.Row="1"/>
+
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Border Grid.Row="2" Background="#484848">
+            <Grid>
+                <Label x:Name="LoginLbl" Content="Login"
+                   Style="{StaticResource H3Label}"
+                   HorizontalAlignment="Left"/>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
