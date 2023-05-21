@@ -85,6 +85,30 @@
     <Compile Include="Windows\KidFolder\TestMenuKidWindow.xaml.cs">
       <DependentUpon>TestMenuKidWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\TeacherFolder\AddGroupTeacherWindow.xaml.cs">
+      <DependentUpon>AddGroupTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\AddKidTeacherWindow.xaml.cs">
+      <DependentUpon>AddKidTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\EditGroupTeacherWindow.xaml.cs">
+      <DependentUpon>EditGroupTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\EditKidTeacherWindow.xaml.cs">
+      <DependentUpon>EditKidTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\GroupsWindow.xaml.cs">
+      <DependentUpon>GroupsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\InGroupTeacherWindow.xaml.cs">
+      <DependentUpon>InGroupTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\MenuTeacherWindow.xaml.cs">
+      <DependentUpon>MenuTeacherWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeacherFolder\ResultTestWindow.xaml.cs">
+      <DependentUpon>ResultTestWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -138,6 +162,38 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\TeacherFolder\AddGroupTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\AddKidTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\EditGroupTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\EditKidTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\GroupsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\InGroupTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\MenuTeacherWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TeacherFolder\ResultTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ResourcesFolder\Image\AutImg.jpg" />
@@ -169,6 +225,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ResourcesFolder\Image\Test1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\testimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourcesFolder\Image\Groups.png" />
+    <Resource Include="ResourcesFolder\Image\TestingRes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

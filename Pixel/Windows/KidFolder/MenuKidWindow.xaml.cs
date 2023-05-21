@@ -46,5 +46,10 @@ namespace Pixel.Windows.KidFolder
         {
 
         }
+
+        private void ResultBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

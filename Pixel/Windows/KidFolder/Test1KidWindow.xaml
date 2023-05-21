@@ -38,7 +38,7 @@
         <Grid Grid.Row="1">
             <ScrollViewer>
                 <StackPanel>
-                    
+<!--////////////////////////////////////////////////////////// 1 Вопрос /////////////////////////////////////////////////////////////-->
                     <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
                             Padding="30,0,30,0" Margin="20">
                         <Grid>
@@ -71,7 +71,7 @@
                             </Grid>
                         </Grid>
                     </Border>
-
+<!--////////////////////////////////////////////////////////// 2 Вопрос картинка /////////////////////////////////////////////////////////////--> 
                     <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
                             Padding="30,0,30,0" Margin="20">
                         <Grid>
@@ -89,11 +89,18 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                    <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
                                     <Label.Content>
-                                        <TextBlock TextWrapping="Wrap">Вопрос: fgfgfgfgfggfgfgfgfgffggfgfdgighoegnm vcbujhjemrfkfdgj 9 iojgoiej g,vmn oidfg jeggergfgdgdfgdfgdg dsfsdfgji mkhorf iurtegmp[sd nmeio jwe dfmiopfj</TextBlock>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: fgfgfgfgfggfgfgfgfgffggfgfdgighoegnm
+                                            vcbujhjemrfkfdgj 9 iojgoiej g,vmn oidfg jeggergfgdgdfgdfgdg
+                                            dsfsdfgji mkhorf iurtegmp[sd nmeio jwe dfmiopfj
+                                        </TextBlock>
                                     </Label.Content>
                                 </Label>
+                                
+                                <Image Source="/ResourcesFolder/Image/testimg.png" Grid.RowSpan="2"
+                                       Margin=" 20"/>
+
 
                                 <Grid Grid.Row="1" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
@@ -109,14 +116,12 @@
                                     <RadioButton GroupName="q1" Content="Вариант 2" Grid.Column="1"/>
                                     <RadioButton GroupName="q1" Content="Вариант 3" Grid.Row="1"/>
                                     <RadioButton GroupName="q1" Content="Вариант 4" Grid.Column="1" Grid.Row="1"/>
-
                                 </Grid>
-
                             </Grid>
                         </Grid>
                     </Border>
 
-
+<!--////////////////////////////////////////////////////////// Конец /////////////////////////////////////////////////////////////-->
                 </StackPanel>
             </ScrollViewer>
         </Grid>
