@@ -73,6 +73,21 @@
     <Compile Include="Windows\AutorizationWindow.xaml.cs">
       <DependentUpon>AutorizationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DirectorFolder\AddTeacherDirectorWindow.xaml.cs">
+      <DependentUpon>AddTeacherDirectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DirectorFolder\EditTeacherDirectorWindow.xaml.cs">
+      <DependentUpon>EditTeacherDirectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DirectorFolder\GroupsDirectorWindow.xaml.cs">
+      <DependentUpon>GroupsDirectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DirectorFolder\ListTeachersDirectorWindow.xaml.cs">
+      <DependentUpon>ListTeachersDirectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DirectorFolder\ResultTestDirectorWindow.xaml.cs">
+      <DependentUpon>ResultTestDirectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\KidFolder\MenuKidWindow.xaml.cs">
       <DependentUpon>MenuKidWindow.xaml</DependentUpon>
     </Compile>
@@ -143,6 +158,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AutorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DirectorFolder\AddTeacherDirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DirectorFolder\EditTeacherDirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DirectorFolder\GroupsDirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DirectorFolder\ListTeachersDirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DirectorFolder\ResultTestDirectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

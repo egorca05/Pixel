@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Pixel.Windows.DirectorFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddTeacherDirectorWindow.xaml
+    /// Логика взаимодействия для ResultTestDirectorWindow.xaml
     /// </summary>
-    public partial class AddTeacherDirectorWindow : Window
+    public partial class ResultTestDirectorWindow : Window
     {
-        public AddTeacherDirectorWindow()
+        public ResultTestDirectorWindow()
         {
             InitializeComponent();
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)

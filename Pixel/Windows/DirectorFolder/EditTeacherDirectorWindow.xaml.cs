@@ -23,5 +23,25 @@ namespace Pixel.Windows.DirectorFolder
         {
             InitializeComponent();
         }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitProfile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
