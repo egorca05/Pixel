@@ -50,7 +50,7 @@
                             <Label Content="Вопрос №1" Style="{StaticResource H2Label}"/>
                             <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
                                 <Label.Content>
-                                    <TextBlock TextWrapping="Wrap">Вопрос: fgfgfgfgfggfgfgfgfgffggfgfdgighoegnm vcbujhjemrfkfdgj 9 iojgoiej g,vmn oidfg jeggergfgdgdfgdfgdg dsfsdfgji mkhorf iurtegmp[sd nmeio jwe dfmiopfj</TextBlock>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Бляяяяяяяяяяяяяяя</TextBlock>
                                 </Label.Content>
                             </Label>
                             <Grid Grid.Row="2">
@@ -89,7 +89,7 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
                                     <Label.Content>
                                         <TextBlock TextWrapping="Wrap">Вопрос: Оби пидор
                                         </TextBlock>
