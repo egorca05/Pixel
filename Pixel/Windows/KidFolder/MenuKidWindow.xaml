@@ -39,7 +39,7 @@
                        Margin="20"
                        Click="ExitAppBtn_Click">
                 <Image Source="/ResourcesFolder/Image/Exit.png"
-                       Height="30" Width="30"/>
+                       Height="30" Width="30" x:Name="Exit" MouseLeftButtonDown="Exit_MouseLeftButtonDown"/>
                 </Button>
 
             </Grid>
@@ -96,9 +96,6 @@
         </Grid>
         <Border Grid.Row="2" Background="#484848">
             <Grid>
-            <Label x:Name="LoginLbl" Content="Login"
-                   Style="{StaticResource H3Label}"
-                   HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                             Margin="20">
                     <Button x:Name="ExitProfile" Content="Выход" 

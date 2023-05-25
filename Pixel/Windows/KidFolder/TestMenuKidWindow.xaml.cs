@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Pixel.ClassFolder;
 using Pixel.Windows.KidFolder;
 
 namespace Pixel.Windows.KidFolder
@@ -27,7 +28,13 @@ namespace Pixel.Windows.KidFolder
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            bool resultMB = ClassMB.QuestionMessage("Вы действительно хотите выйти из аккаунта?");
+            if (resultMB == true)
+            {
+                AutorizationWindow autorizationWindow = new AutorizationWindow();
+                autorizationWindow.Show();
+                this.Close();
+            }
         }
 
         private void Test1Btn_Click(object sender, RoutedEventArgs e)
@@ -55,6 +62,11 @@ namespace Pixel.Windows.KidFolder
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Exit_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ClassMB.MBExit();
         }
     }
 }
