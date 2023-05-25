@@ -79,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ClassFolder\ClassMB.cs" />
     <Compile Include="FolderData\Attempts.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
