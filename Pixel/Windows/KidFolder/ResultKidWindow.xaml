@@ -46,7 +46,7 @@
                        Margin="20"
                     Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
-                           Width="30" Height="30"/>
+                           Width="30" Height="30" x:Name="Exit" MouseLeftButtonDown="Exit_MouseLeftButtonDown"/>
                 </Button>
 
             </Grid>
@@ -60,18 +60,18 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Твои достижения" Style="{StaticResource H2Label}"/>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+                    <DataGrid x:Name="DgList" Grid.Row="1" AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№"
-                                                Binding="{Binding}"
+                                                Binding="{Binding IdAttempts}"
                                                 />
                             <DataGridTextColumn Header="Модуль"
-                                                Binding="{Binding}"
+                                                Binding="{Binding Test.NameTest}"
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Результаты"
-                                                Binding="{Binding}"
+                                                Binding="{Binding Scores}"
                                                 Width="*"                                              
                                                 />
                         </DataGrid.Columns>
@@ -83,9 +83,6 @@
         </Grid>
         <Border Grid.Row="2" Background="#484848">
             <Grid>
-                <Label x:Name="LoginLbl" Content="Login"
-                   Style="{StaticResource H3Label}"
-                   HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                             Margin="20">
                     <Button x:Name="ExitProfile" Content="Выход" 

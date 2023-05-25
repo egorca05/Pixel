@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pixel.Windows.KidFolder"
         mc:Ignorable="d"
-        Title="Окно" Height="10000" Width="1290"
+        Title="Окно" Height="800" Width="1290"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -125,10 +125,6 @@
         </Grid>
         <Border Grid.Row="2" Background="#484848">
             <Grid>
-                <Label x:Name="LoginLbl" Content="Login"
-                   Style="{StaticResource H3Label}"
-                   HorizontalAlignment="Left"/>
-                
             </Grid>
         </Border>
     </Grid>
