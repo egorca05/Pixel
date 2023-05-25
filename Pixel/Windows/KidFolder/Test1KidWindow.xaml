@@ -89,7 +89,7 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
                                     <Label.Content>
                                         <TextBlock TextWrapping="Wrap">Вопрос: Оби пидор
                                         </TextBlock>
