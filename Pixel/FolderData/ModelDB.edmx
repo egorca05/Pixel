@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище ModelDB" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Attempts">
           <Key>
             <PropertyRef Name="IdAttempts" />
@@ -128,7 +128,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище DBModelContainer">
+        <EntityContainer Name="Хранилище ModelDBContainer">
           <EntitySet Name="Attempts" EntityType="Self.Attempts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonalData" EntityType="Self.PersonalData" Schema="dbo" store:Type="Tables" />
@@ -161,7 +161,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ModelDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Attempts">
           <Key>
             <PropertyRef Name="IdAttempts" />
@@ -329,9 +329,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelDBContainer" CdmEntityContainer="DBEntities">
           <EntitySetMapping Name="Attempts">
-            <EntityTypeMapping TypeName="DBModel.Attempts">
+            <EntityTypeMapping TypeName="ModelDB.Attempts">
               <MappingFragment StoreEntitySet="Attempts">
                 <ScalarProperty Name="IdAttempts" ColumnName="IdAttempts" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
@@ -342,7 +342,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Groups">
-            <EntityTypeMapping TypeName="DBModel.Groups">
+            <EntityTypeMapping TypeName="ModelDB.Groups">
               <MappingFragment StoreEntitySet="Groups">
                 <ScalarProperty Name="IdGroups" ColumnName="IdGroups" />
                 <ScalarProperty Name="NameGroups" ColumnName="NameGroups" />
@@ -350,7 +350,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PersonalData">
-            <EntityTypeMapping TypeName="DBModel.PersonalData">
+            <EntityTypeMapping TypeName="ModelDB.PersonalData">
               <MappingFragment StoreEntitySet="PersonalData">
                 <ScalarProperty Name="IdPersonalData" ColumnName="IdPersonalData" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -363,7 +363,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="DBModel.Role">
+            <EntityTypeMapping TypeName="ModelDB.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
@@ -371,7 +371,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DBModel.sysdiagrams">
+            <EntityTypeMapping TypeName="ModelDB.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -382,7 +382,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Test">
-            <EntityTypeMapping TypeName="DBModel.Test">
+            <EntityTypeMapping TypeName="ModelDB.Test">
               <MappingFragment StoreEntitySet="Test">
                 <ScalarProperty Name="IdTest" ColumnName="IdTest" />
                 <ScalarProperty Name="NameTest" ColumnName="NameTest" />
@@ -390,7 +390,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="DBModel.User">
+            <EntityTypeMapping TypeName="ModelDB.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
