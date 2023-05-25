@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attempts">
+          <Key>
+            <PropertyRef Name="IdAttempts" />
+          </Key>
+          <Property Name="IdAttempts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdTest" Type="int" Nullable="false" />
+          <Property Name="Scores" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="IdGroups" />
+          </Key>
+          <Property Name="IdGroups" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameGroups" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalData">
+          <Key>
+            <PropertyRef Name="IdPersonalData" />
+          </Key>
+          <Property Name="IdPersonalData" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="40" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="IdGroups" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="17" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameRole" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="IdTest" />
+          </Key>
+          <Property Name="IdTest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameTest" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginUser" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="PassworUser" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="IdRoleUser" Type="int" Nullable="false" />
+          <Property Name="IdPersonalDataUser" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Attempts_Test">
+          <End Role="Test" Type="Self.Test" Multiplicity="1" />
+          <End Role="Attempts" Type="Self.Attempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test">
+              <PropertyRef Name="IdTest" />
+            </Principal>
+            <Dependent Role="Attempts">
+              <PropertyRef Name="IdTest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attempts_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Attempts" Type="Self.Attempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Attempts">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalData_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="IdGroups" />
+            </Principal>
+            <Dependent Role="PersonalData">
+              <PropertyRef Name="IdGroups" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="IdPersonalData" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdPersonalDataUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRoleUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DBModelContainer">
+          <EntitySet Name="Attempts" EntityType="Self.Attempts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalData" EntityType="Self.PersonalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Attempts_Test" Association="Self.FK_Attempts_Test">
+            <End Role="Test" EntitySet="Test" />
+            <End Role="Attempts" EntitySet="Attempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attempts_User" Association="Self.FK_Attempts_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Attempts" EntitySet="Attempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalData_Groups" Association="Self.FK_PersonalData_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="PersonalData" EntitySet="PersonalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_PersonalData" Association="Self.FK_User_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role1" Association="Self.FK_User_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attempts">
+          <Key>
+            <PropertyRef Name="IdAttempts" />
+          </Key>
+          <Property Name="IdAttempts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdTest" Type="Int32" Nullable="false" />
+          <Property Name="Scores" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Test" Relationship="Self.FK_Attempts_Test" FromRole="Attempts" ToRole="Test" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Attempts_User" FromRole="Attempts" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="IdGroups" />
+          </Key>
+          <Property Name="IdGroups" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameGroups" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PersonalData" Relationship="Self.FK_PersonalData_Groups" FromRole="Groups" ToRole="PersonalData" />
+        </EntityType>
+        <EntityType Name="PersonalData">
+          <Key>
+            <PropertyRef Name="IdPersonalData" />
+          </Key>
+          <Property Name="IdPersonalData" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdGroups" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_PersonalData_Groups" FromRole="PersonalData" ToRole="Groups" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_PersonalData" FromRole="PersonalData" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameRole" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role1" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="IdTest" />
+          </Key>
+          <Property Name="IdTest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameTest" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Attempts" Relationship="Self.FK_Attempts_Test" FromRole="Test" ToRole="Attempts" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginUser" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PassworUser" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdRoleUser" Type="Int32" Nullable="false" />
+          <Property Name="IdPersonalDataUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Attempts" Relationship="Self.FK_Attempts_User" FromRole="User" ToRole="Attempts" />
+          <NavigationProperty Name="PersonalData" Relationship="Self.FK_User_PersonalData" FromRole="User" ToRole="PersonalData" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role1" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Attempts_Test">
+          <End Role="Test" Type="Self.Test" Multiplicity="1" />
+          <End Role="Attempts" Type="Self.Attempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test">
+              <PropertyRef Name="IdTest" />
+            </Principal>
+            <Dependent Role="Attempts">
+              <PropertyRef Name="IdTest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attempts_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Attempts" Type="Self.Attempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Attempts">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalData_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="IdGroups" />
+            </Principal>
+            <Dependent Role="PersonalData">
+              <PropertyRef Name="IdGroups" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="IdPersonalData" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdPersonalDataUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRoleUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attempts" EntityType="Self.Attempts" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" />
+          <EntitySet Name="PersonalData" EntityType="Self.PersonalData" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Test" EntityType="Self.Test" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Attempts_Test" Association="Self.FK_Attempts_Test">
+            <End Role="Test" EntitySet="Test" />
+            <End Role="Attempts" EntitySet="Attempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attempts_User" Association="Self.FK_Attempts_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Attempts" EntitySet="Attempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalData_Groups" Association="Self.FK_PersonalData_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="PersonalData" EntitySet="PersonalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_PersonalData" Association="Self.FK_User_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role1" Association="Self.FK_User_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Attempts">
+            <EntityTypeMapping TypeName="DBModel.Attempts">
+              <MappingFragment StoreEntitySet="Attempts">
+                <ScalarProperty Name="IdAttempts" ColumnName="IdAttempts" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdTest" ColumnName="IdTest" />
+                <ScalarProperty Name="Scores" ColumnName="Scores" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="DBModel.Groups">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="IdGroups" ColumnName="IdGroups" />
+                <ScalarProperty Name="NameGroups" ColumnName="NameGroups" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalData">
+            <EntityTypeMapping TypeName="DBModel.PersonalData">
+              <MappingFragment StoreEntitySet="PersonalData">
+                <ScalarProperty Name="IdPersonalData" ColumnName="IdPersonalData" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="IdGroups" ColumnName="IdGroups" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="DBModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test">
+            <EntityTypeMapping TypeName="DBModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="IdTest" ColumnName="IdTest" />
+                <ScalarProperty Name="NameTest" ColumnName="NameTest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="PassworUser" ColumnName="PassworUser" />
+                <ScalarProperty Name="IdRoleUser" ColumnName="IdRoleUser" />
+                <ScalarProperty Name="IdPersonalDataUser" ColumnName="IdPersonalDataUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
