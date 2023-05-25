@@ -63,6 +63,7 @@ namespace Pixel.Windows
                         switch (user.IdRoleUser)
                         {
                             case 1:
+                                ClassGlobal.UserId = user.IdUser;
                                 MenuTeacherWindow menuTeacherWindow = new MenuTeacherWindow();
                                 menuTeacherWindow.Show();
                                 this.Close();
