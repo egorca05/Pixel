@@ -34,10 +34,14 @@
                 <Button
                     x:Name="ExitAppBtn"
                     Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalAlignment="Right"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
-                       Click="ExitAppBtn_Click">
+                    Margin="20"
+                    Height="30" Width="30"
+                    Click="ExitAppBtn_Click"
+                    >
                 <Image Source="/ResourcesFolder/Image/Exit.png"
                        Height="30" Width="30" x:Name="Exit" MouseLeftButtonDown="Exit_MouseLeftButtonDown"/>
                 </Button>

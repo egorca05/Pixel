@@ -1,6 +1,7 @@
 ﻿using Pixel.ClassFolder;
 using Pixel.FolderData;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +25,14 @@ namespace Pixel.Windows.DirectorFolder
         public ListTeachersDirectorWindow()
         {
             InitializeComponent();
+            TeacherData.ItemsSource = DBEntities.GetContext().User
+                .Where(u => u.IdRoleUser == 1).ToList();
         }
 
         private void Ref()
         {
             TeacherData.ItemsSource = DBEntities.GetContext().User.ToList()
-                .OrderBy(c => c.IdUser);
+                .OrderBy(c => c.IdRoleUser = 1);
             //СДЕЛАТЬ ЧТОБЫ БЫЛИ ТОЛЬКО УЧИТЕЛЯ
         }
 
@@ -47,7 +50,10 @@ namespace Pixel.Windows.DirectorFolder
 
         private void MoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            EditTeacherDirectorWindow editTeacherDirectorWindow = new EditTeacherDirectorWindow();  
+            User user = TeacherData.SelectedItem as User;
+            ClassGlobal.UserEdit = user.IdUser;
+
+            EditTeacherDirectorWindow editTeacherDirectorWindow = new EditTeacherDirectorWindow(TeacherData.SelectedItem as User);  
             editTeacherDirectorWindow.Show();
             this.Close();
         }
@@ -63,7 +69,7 @@ namespace Pixel.Windows.DirectorFolder
         {
             if (TeacherData.SelectedItem == null)
             {
-                ClassMB.MBerror("Выберите адресс для удаления");
+                ClassMB.MBerror("Выберите пользователя для удаления");
             }
             else
             {

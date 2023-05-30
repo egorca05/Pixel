@@ -37,9 +37,12 @@ Title="Окно" Height="750" Width="1290"
                     Style="{StaticResource LabelLogo}"/>
                 <Button
                     Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalContentAlignment="Right"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
+                    Margin="20"
+                    Height="30" Width="30"
                     Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
                            Width="30" Height="30"/>
@@ -64,7 +67,7 @@ Title="Окно" Height="750" Width="1290"
                     </Grid.RowDefinitions>
                     <Image Source="/ResourcesFolder/Image/TestingRes.png" 
                            Margin="20"/>
-                    <Label Content="Учетиля" Style="{StaticResource H2Label}"
+                    <Label Content="Учителя" Style="{StaticResource H2Label}"
                            Grid.Row="1"/>
                     <Button
                         x:Name="TeacherBtn"

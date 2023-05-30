@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Pixel.ClassFolder;
 using Pixel.FolderData;
 using Pixel.Windows;
+using Pixel.Windows.DirectorFolder;
 using Pixel.Windows.KidFolder;
 using Pixel.Windows.TeacherFolder;
 
@@ -60,6 +61,7 @@ namespace Pixel.Windows
                     }
                     else
                     {
+                        ClassGlobal.UserId = user.IdUser;
                         switch (user.IdRoleUser)
                         {
                             case 1:
@@ -74,7 +76,9 @@ namespace Pixel.Windows
                                 this.Close();
                                 break;
                             case 3:
-
+                                MenuDirectorWindow menuDirectorWindow = new MenuDirectorWindow();
+                                menuDirectorWindow.Show();
+                                this.Close();
                                 break;
                         }
                         

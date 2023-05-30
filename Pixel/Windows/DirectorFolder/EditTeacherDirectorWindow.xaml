@@ -40,10 +40,13 @@
                     Grid.Column="1"
                     Style="{StaticResource LabelLogo}"/>
                 <Button
-                    Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalContentAlignment="Right"
+                   Background="{x:Null}" BorderBrush="{x:Null}"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
+                    Margin="20"
+                    Height="30" Width="30"
                     Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
                            Width="30" Height="30"/>
@@ -84,7 +87,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding LastName}"
+                        Text="{Binding PersonalData.LastName}"
                         Height="50"/>
 
                     <TextBox                
@@ -96,7 +99,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding FirstName}"
+                        Text="{Binding PersonalData.FirstName}"
                         Height="50"/>
 
                     <TextBox                
@@ -108,7 +111,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding MiddleName}"
+                        Text="{Binding PersonalData.MiddleName}"
                         Height="50"/>
 
                     <TextBox                
@@ -120,7 +123,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding Phone}"
+                        Text="{Binding PersonalData.Phone}"
                         Height="50"/>
 
                     <TextBox                
@@ -147,29 +150,20 @@
                         Text="{Binding LoginUser}"
                         Height="50"/>
 
-                    <ComboBox
-                        materialDesign:ComboBoxAssist.MaxLength="2"
-                        materialDesign:HintAssist.Hint="Группа"
-                        materialDesign:HintAssist.HintOpacity=".26"
-                        IsEditable="True" Grid.Column="5" Grid.Row="3"
-                         Height="50" FontSize="20"
-                        VerticalContentAlignment="Center"
-                        BorderBrush="Black"
-                        Foreground="Black"
-                        Margin="5">
-
-                    </ComboBox>
+                                
 
                     <DatePicker
-
+                        x:Name="DateOfBirthDP"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.Column="2" Grid.Row="4"
-                         Height="50" FontSize="20"
+                        Height="50" FontSize="20"
                         VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
                         BorderBrush="Black"
                         Foreground="Black"
-                        Margin="5"/>
+                        Margin="5"
+                        Text="{Binding PersonalData.DateOfBirth}"/>
 
                     <Label Content="Фамилия:" 
                            Grid.Column="1" Grid.Row="1"
@@ -213,11 +207,7 @@
                            HorizontalAlignment="Right"
                            Margin="10"/>
 
-                    <Label Content="Группа:" 
-                           Grid.Column="4" Grid.Row="3"
-                           Style="{StaticResource H3Label}"
-                           HorizontalAlignment="Right"
-                           Margin="10"/>
+                    
 
                     <Button
                         x:Name="EditBtn"
@@ -235,9 +225,6 @@
         </Grid>
         <Border Grid.Row="2" Background="#484848">
             <Grid>
-                <Label x:Name="LoginLbl" Content="Login"
-                   Style="{StaticResource H3Label}"
-                   HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                             Margin="20">
                     <Button x:Name="ExitProfile" Content="Выход" 

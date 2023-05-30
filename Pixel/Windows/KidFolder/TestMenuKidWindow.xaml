@@ -26,7 +26,8 @@
                 
                 <StackPanel Orientation="Horizontal" Margin="20">
                     <Button Background="{x:Null}" BorderBrush="{x:Null}"
-                            Click="Button_Click">
+                            x:Name="BackBtn"
+                            Click="BackBtn_Click">
                         <Image Source="/ResourcesFolder/Image/backBtn.png" 
                                Width="49" Height="49"/>
                     </Button>
@@ -41,10 +42,13 @@
                     Style="{StaticResource LabelLogo}"/>
                 <Button
                     Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalContentAlignment="Right"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
-                    Click="Button_Click_1">
+                    Margin="20"
+                    Height="30" Width="30"
+                    Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
                            Width="30" Height="30" x:Name="Exit" MouseLeftButtonDown="Exit_MouseLeftButtonDown"/>
                 </Button>

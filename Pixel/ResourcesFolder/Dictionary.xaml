@@ -26,7 +26,7 @@
 
     <Style TargetType="Border" x:Key="BorderPanel">
         <Setter Property="Background" Value="#F0F0F0"/>
-        <Setter Property="Margin" Value="30"/>
+        <Setter Property="Margin" Value="20"/>
         <Setter Property="CornerRadius" Value="30"/>
     </Style>
 
@@ -89,6 +89,7 @@
         <Setter Property="Background" Value="Transparent"/>
 
     </Style>
+
 
     <Style TargetType="RadioButton">
         <Setter Property="FontWeight" Value="Regular"/>

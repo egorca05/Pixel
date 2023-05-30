@@ -24,7 +24,10 @@ namespace Pixel.Windows.KidFolder
         public ResultKidWindow()
         {
             InitializeComponent();
-            DgList.ItemsSource = DBEntities.GetContext().User.ToList().Where(u => u.IdUser == ClassGlobal.UserId);
+            DgList.ItemsSource = DBEntities.GetContext().Attempts
+                .Where(u => u.IdUser == ClassGlobal.UserId).ToList();
+            //DgList.ItemsSource = DBEntities.GetContext().Attempts
+            //   .ToList().OrderBy(x => x.IdAttempts);
         }
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)

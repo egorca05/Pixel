@@ -9,5 +9,6 @@ namespace Pixel.ClassFolder
     internal class ClassGlobal
     {
         static public int UserId { get; set; }
+        static public int UserEdit { get; set; }
     }
 }

@@ -54,19 +54,21 @@ namespace Pixel.Windows.KidFolder
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Exit_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ClassMB.MBExit();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuKidWindow menuKidWindow = new MenuKidWindow();
+            menuKidWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

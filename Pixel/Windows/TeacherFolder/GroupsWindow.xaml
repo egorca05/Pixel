@@ -41,9 +41,12 @@
                     Style="{StaticResource LabelLogo}"/>
                 <Button
                     Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalContentAlignment="Right"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
+                    Margin="20"
+                    Height="30" Width="30"
                     Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
                            Width="30" Height="30"/>
@@ -124,9 +127,6 @@
         </Grid>
         <Border Grid.Row="2" Background="#484848">
             <Grid>
-                <Label x:Name="LoginLbl" Content="Login"
-                   Style="{StaticResource H3Label}"
-                   HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                             Margin="20">
                     <Button x:Name="ExitProfile" Content="Выход" 

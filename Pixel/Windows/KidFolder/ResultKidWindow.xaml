@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Pixel.Windows.KidFolder"
         mc:Ignorable="d"
          Title="Окно" Height="750" Width="1290"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize">
@@ -41,9 +40,12 @@
                     Style="{StaticResource LabelLogo}"/>
                 <Button
                     Background="{x:Null}" BorderBrush="{x:Null}"
-                            HorizontalContentAlignment="Right"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
                     Grid.Column="2"
-                       Margin="20"
+                    Margin="20"
+                    Height="30" Width="30"
                     Click="Button_Click">
                     <Image Source="/ResourcesFolder/Image/Exit.png"
                            Width="30" Height="30" x:Name="Exit" MouseLeftButtonDown="Exit_MouseLeftButtonDown"/>
