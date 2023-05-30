@@ -31,8 +31,8 @@ namespace Pixel.Windows.DirectorFolder
 
         private void Ref()
         {
-            TeacherData.ItemsSource = DBEntities.GetContext().User.ToList()
-                .OrderBy(c => c.IdRoleUser = 1);
+            TeacherData.ItemsSource = DBEntities.GetContext().User
+                .Where(u => u.IdRoleUser == 1).ToList();
             //СДЕЛАТЬ ЧТОБЫ БЫЛИ ТОЛЬКО УЧИТЕЛЯ
         }
 

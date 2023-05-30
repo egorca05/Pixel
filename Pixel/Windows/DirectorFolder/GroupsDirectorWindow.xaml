@@ -63,14 +63,15 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Группы" Style="{StaticResource H2Label}"/>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+                    <DataGrid x:Name="GroupsDG"
+                        Grid.Row="1" AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№"
-                                                Binding="{Binding}"
+                                                Binding="{Binding IdGroups}"
                                                 />
                             <DataGridTextColumn Header="Название группы"
-                                                Binding="{Binding}"
+                                                Binding="{Binding NameGroups}"
                                                 Width="*"
                                                 />
                         </DataGrid.Columns>
