@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pixel.ClassFolder;
+using Pixel.Windows.KidFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,22 +28,32 @@ namespace Pixel.Windows.TeacherFolder
 
         private void ResultBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ResultTestWindow resultKidWindow = new ResultTestWindow();
+            resultKidWindow.Show();
+            this.Close();
         }
 
         private void GroupBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            GroupsWindow groupsWindow = new GroupsWindow();
+            groupsWindow.Show();
+            this.Close();
         }
 
         private void ExitAppBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ClassMB.MBExit();
         }
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            bool resultMB = ClassMB.QuestionMessage("Вы действительно хотите выйти из аккаунта?");
+            if (resultMB == true)
+            {
+                AutorizationWindow autorizationWindow = new AutorizationWindow();
+                autorizationWindow.Show();
+                this.Close();
+            }
         }
 
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pixel.ClassFolder;
+using Pixel.FolderData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,64 @@ namespace Pixel.Windows.KidFolder
         public Test1KidWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int TrueAnsver = 0;
+            if (AnsOne.IsChecked == true) 
+            {
+                TrueAnsver ++;
+            }
+            if (AnsTwo.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsThree.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsFour.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsFive.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsSix.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsSeven.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsEight.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsNine.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            if (AnsTen.IsChecked == true)
+            {
+                TrueAnsver++;
+            }
+            //var kid = DBEntities.GetContext().User.FirstOrDefault(u => u.IdUser == ClassGlobal.UserId);
+            DBEntities.GetContext().Attempts.Add(new Attempts()
+            {
+                IdUser = ClassGlobal.UserId,
+                IdTest = 1,
+                Scores = TrueAnsver,
+                Date = DateTime.Today,
+            });
+            DBEntities.GetContext().SaveChanges();
+            ClassMB.MBinformation($"Правильных ответов: {TrueAnsver}");
+            MenuKidWindow menuKidWindow = new MenuKidWindow();
+            menuKidWindow.Show();
+            this.Close(); 
         }
     }
 }

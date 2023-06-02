@@ -87,7 +87,7 @@
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Результаты"
-                                                Binding="{Binding Scores}"
+                                                Binding="{Binding Scores, StringFormat=d}"
                                                 Width="*"                                              
                                                 />
                         </DataGrid.Columns>

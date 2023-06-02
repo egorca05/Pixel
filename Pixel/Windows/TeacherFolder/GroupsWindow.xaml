@@ -68,13 +68,14 @@
                     </Grid.RowDefinitions>
                     <Label Content="Группы" Style="{StaticResource H2Label}"/>
                     <DataGrid Grid.Row="1" AutoGenerateColumns="False"
-                              IsReadOnly="True">
+                              IsReadOnly="True"
+                              x:Name="GriupsDG">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№"
-                                                Binding="{Binding}"
+                                                Binding="{Binding IdGroups}"
                                                 />
                             <DataGridTextColumn Header="Название группы"
-                                                Binding="{Binding}"
+                                                Binding="{Binding NameGroups}"
                                                 Width="*"
                                                 />
                         </DataGrid.Columns>
@@ -91,6 +92,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Действия" Style="{StaticResource H2Label}"/>
                     <Button
@@ -102,25 +104,32 @@
                         Grid.Row="1" Width="305"/>
                     <Button
                         x:Name="EditBtn"
-                        Content="Редактировать"
+                        Content="Редактировать группу"
                         Click="EditBtn_Click"
                         Background="#734EF6"
                         Style="{DynamicResource MenuBtn}"                      
                         Grid.Row="2" Width="305"/>
                     <Button
                         x:Name="AddBtn"
-                        Content="Добавить"
+                        Content="Добавить группу"
                         Click="AddBtn_Click"
                         Background="#734EF6"
                         Style="{DynamicResource MenuBtn}"                      
                         Grid.Row="3" Width="305"/>
+                    <Button
+                        x:Name="AddKidBtn"
+                        Content="Добавить ученика"
+                        Click="AddKidBtn_Click"
+                        Style="{DynamicResource MenuBtn}"
+                        Background="#B6B6B6"
+                        Grid.Row="4" Width="305"/>
                     <Button
                         x:Name="DelBtn"
                         Content="Удалить"
                         Click="DelBtn_Click"
                         Style="{DynamicResource MenuBtn}"
                         Background="#B6B6B6"
-                        Grid.Row="4" Width="305"/>
+                        Grid.Row="5" Width="305"/>
                 </Grid>
             </Border>
 

@@ -76,9 +76,12 @@ namespace Pixel.Windows.DirectorFolder
                 try
                 {
                     User user = TeacherData.SelectedItem as User;
+                    PersonalData personalData = user.PersonalData;
                     if (ClassMB.QuestionMessage($"Удалить выбранного пользователя?"))
                     {
                         DBEntities.GetContext().User.Remove(user);
+                        DBEntities.GetContext().SaveChanges();
+                        DBEntities.GetContext().PersonalData.Remove(personalData);
                         DBEntities.GetContext().SaveChanges();
                         Ref();
                     }

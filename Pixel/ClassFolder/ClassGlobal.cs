@@ -10,5 +10,7 @@ namespace Pixel.ClassFolder
     {
         static public int UserId { get; set; }
         static public int UserEdit { get; set; }
+        static public int GroupEdit { get; set; }
+        static public int KidEdit { get; set; }
     }
 }

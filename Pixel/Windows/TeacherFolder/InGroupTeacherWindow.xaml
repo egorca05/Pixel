@@ -66,19 +66,20 @@
                         <RowDefinition Height="70"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Content="Группа" Style="{StaticResource H2Label}"/>
+                    <Label Content="Ученики в группе" Style="{StaticResource H2Label}"/>
                     <DataGrid Grid.Row="1" AutoGenerateColumns="False"
-                              IsReadOnly="True">
+                              IsReadOnly="True"
+                              x:Name="KidDG">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№"
-                                                Binding="{Binding}"
+                                                Binding="{Binding IdPersonalData}"
                                                 />
                             <DataGridTextColumn Header="Фамилия"
-                                                Binding="{Binding}"
+                                                Binding="{Binding LastName}"
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Имя"
-                                                Binding="{Binding}"
+                                                Binding="{Binding FirstName}"
                                                 Width="*"
                                                 />
                         </DataGrid.Columns>
@@ -93,7 +94,6 @@
                         <RowDefinition Height="70"/>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Действия" Style="{StaticResource H2Label}"/>
                     <Button
@@ -102,21 +102,14 @@
                         Click="MoreBtn_Click"
                         Background="#734EF6"
                         Style="{DynamicResource MenuBtn}"                      
-                        Grid.Row="1" Width="305"/>
-                    <Button
-                        x:Name="AddBtn"
-                        Content="Добавить"
-                        Click="AddBtn_Click"
-                        Background="#734EF6"
-                        Style="{DynamicResource MenuBtn}"                      
-                        Grid.Row="2" Width="305"/>
+                        Grid.Row="1" Width="305" Height="60"/>
                     <Button
                         x:Name="DelBtn"
                         Content="Удалить"
-                        Click="DelBtn_Click"
+                        Click="DelBtn_Click_1"
                         Style="{DynamicResource MenuBtn}"
                         Background="#B6B6B6"
-                        Grid.Row="4" Width="305"/>
+                        Grid.Row="4" Width="305" Height="60"/>
                 </Grid>
             </Border>
 

@@ -63,30 +63,32 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Content="Резуьтаты тестирования" Style="{StaticResource H2Label}"/>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+                    <DataGrid 
+                        x:Name="ResultDG"
+                        Grid.Row="1" AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№"
-                                                Binding="{Binding}"
+                                                Binding="{Binding IdAttempts}"
                                                 />
                             <DataGridTextColumn Header="Группа"
-                                                Binding="{Binding}"
+                                                Binding="{Binding User.PersonalData.Groups.NameGroups}"
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Ученик"
-                                                Binding="{Binding}"
+                                                Binding="{Binding User.PersonalData.LastName}"
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Модуль"
-                                                Binding="{Binding}"
+                                                Binding="{Binding Test.NameTest}"
                                                 Width="*"
                                                 />
                             <DataGridTextColumn Header="Результаты"
-                                                Binding="{Binding}"
+                                                Binding="{Binding Scores}"
                                                 Width="*"                                              
                                                 />
                             <DataGridTextColumn Header="Дата отправки"
-                                                Binding="{Binding}"
+                                                Binding="{Binding Date, StringFormat=d}"
                                                 Width="*"                                              
                                                 />
                         </DataGrid.Columns>

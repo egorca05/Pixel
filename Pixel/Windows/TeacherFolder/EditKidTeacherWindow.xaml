@@ -135,22 +135,22 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding PassworUser}"
+                        
                         Height="50"/>
 
                     <TextBox                
                         x:Name="LoginTb"
-                        materialDesign:HintAssist.Hint="Телефон"
+                        materialDesign:HintAssist.Hint="Логин"
                         Grid.Column="5" Grid.Row="1"
                         FontSize="20"
                         VerticalContentAlignment="Center"
                         BorderBrush="Black"
                         Foreground="Black"
                         Margin="5"
-                        Text="{Binding LoginUser}"
                         Height="50"/>
 
                     <ComboBox
+                        x:Name="GroupCB"
                         materialDesign:ComboBoxAssist.MaxLength="2"
                         materialDesign:HintAssist.Hint="Группа"
                         materialDesign:HintAssist.HintOpacity=".26"
@@ -159,12 +159,16 @@
                         VerticalContentAlignment="Center"
                         BorderBrush="Black"
                         Foreground="Black"
-                        Margin="5">
+                        Margin="5"
+                         Text="{Binding Groups.NameGroups}"
+                        DisplayMemberPath="NameGroups" 
+                        SelectedValuePath="IdGroups">
+                        
                         
                     </ComboBox>
 
                     <DatePicker
-
+                        x:Name="DateOfDP"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.Column="2" Grid.Row="4"
@@ -172,7 +176,8 @@
                         VerticalContentAlignment="Center"
                         BorderBrush="Black"
                         Foreground="Black"
-                        Margin="5"/>
+                        Margin="5"
+                        Text="{Binding DateOfBirth}"/>
 
                     <Label Content="Фамилия:" 
                            Grid.Column="1" Grid.Row="1"
