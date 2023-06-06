@@ -1,0 +1,449 @@
+﻿<Window x:Class="Pixel.Windows.KidFolder.Test3KidWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pixel.Windows.KidFolder"
+        mc:Ignorable="d"
+         Title="Окно" Height="750" Width="1290"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Border Background="#649CE6">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/ResourcesFolder/Image/Logo.png" 
+                       Margin="20"
+                       Height="49" Width="210"
+                       HorizontalAlignment="Left"/>
+                <Label 
+                    Content="Python Bot"
+                    Grid.Column="1"
+                    Style="{StaticResource LabelLogo}"/>
+
+
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <StackPanel>
+                    <!--////////////////////////////////////////////////////////// 1 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №1" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Выберите правильную запись оператора присваивания:</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q1" Content="10 = x"/>
+                                <RadioButton GroupName="q1" Content="y = 7,8" Grid.Column="1"/>
+                                <RadioButton GroupName="q1" Content="a = 5" Grid.Row="1"
+                                             x:Name="AnsOne"/>
+                                <RadioButton GroupName="q1" Content="a == d + x" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 2 Вопрос картинка /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №2" Style="{StaticResource H2Label}"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: Сколько раз произойдет итерация цикла?
+                                        </TextBlock>
+                                    </Label.Content>
+                                </Label>
+
+                                <Image Source="/ResourcesFolder/Image/Test3/2.png" Grid.RowSpan="2"
+                                       Margin=" 20"/>
+
+
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <RadioButton GroupName="q2" Content="4"/>
+                                    <RadioButton GroupName="q2" Content="0" Grid.Column="1"
+                                                 x:Name="AnsTwo"/>
+                                    <RadioButton GroupName="q2" Content="6" Grid.Row="1"/>
+                                    <RadioButton GroupName="q2" Content="5" Grid.Column="1" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 3 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №3" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Укажите оператор ввода:</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q3" Content="print()"/>
+                                <RadioButton GroupName="q3" Content="input()" Grid.Column="1"
+                                             x:Name="AnsThree"/>
+                                <RadioButton GroupName="q3" Content="int()" Grid.Row="1"/>
+                                <RadioButton GroupName="q3" Content="random()" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 4 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №4" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Сколько возможных значений у переменной типа bool?</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q4" Content="4"/>
+                                <RadioButton GroupName="q4" Content="10" Grid.Column="1"/>
+                                <RadioButton GroupName="q4" Content="2" Grid.Row="1"
+                                             x:Name="AnsFour"/>
+                                <RadioButton GroupName="q4" Content="Сколько угодно" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 5 Вопрос картинка /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №5" Style="{StaticResource H2Label}"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: В какой строке правильно записан ввод числа с клавиатуры?
+                                        </TextBlock>
+                                    </Label.Content>
+                                </Label>
+
+                                <Image Source="/ResourcesFolder/Image/Test3/5.png" Grid.RowSpan="2"
+                                       Margin=" 20"/>
+
+
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="350"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <RadioButton GroupName="q5" Content="3"
+                                                 x:Name="AnsFive"/>
+                                    <RadioButton GroupName="q5" Content="2" Grid.Column="1"/>
+                                    <RadioButton GroupName="q5" Content="4" Grid.Row="1"/>
+                                    <RadioButton GroupName="q5" Content="1" Grid.Column="1" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 6 Вопрос картинка /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №6" Style="{StaticResource H2Label}"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: В какой строчке допущена ошибка?
+                                        </TextBlock>
+                                    </Label.Content>
+                                </Label>
+
+                                <Image Source="/ResourcesFolder/Image/Test3/6.png" Grid.RowSpan="2"
+                                       Margin=" 20"/>
+
+
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <RadioButton GroupName="q6" Content="1"/>
+                                    <RadioButton GroupName="q6" Content="4" Grid.Column="1"/>
+                                    <RadioButton GroupName="q6" Content="2" Grid.Row="1"/>
+                                    <RadioButton GroupName="q6" Content="3" Grid.Column="1" Grid.Row="1"
+                                                 x:Name="AnsSix"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 7 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №7" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Что лучше использовать для множественного ветвления?</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q7" Content="if - elif - else"
+                                             x:Name="AnsSeven"/>
+                                <RadioButton GroupName="q7" Content="Много if" Grid.Column="1"/>
+                                <RadioButton GroupName="q7" Content="if - else - elif" Grid.Row="1"/>
+                                <RadioButton GroupName="q7" Content="while" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 8 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №8" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Для чего нужен рператор break?</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q8" Content="Для завершения программы"/>
+                                <RadioButton GroupName="q8" Content="Для поломки компьютера" Grid.Column="1"/>
+                                <RadioButton GroupName="q8" Content="Для удаления программы" Grid.Row="1"/>
+                                <RadioButton GroupName="q8" Content="Дл выхода из цикла" Grid.Column="1" Grid.Row="1"
+                                             x:Name="AnsEight"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 9 Вопрос /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="150"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №9" Style="{StaticResource H2Label}"/>
+                            <Label Grid.Row="1" Style="{StaticResource H3Label}" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap">Вопрос: Что делает функция len()?</TextBlock>
+                                </Label.Content>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton GroupName="q9" Content="Возвращает случайное число"/>
+                                <RadioButton GroupName="q9" Content="Возвращает длину строки" Grid.Column="1"
+                                             x:Name="AnsNine"/>
+                                <RadioButton GroupName="q9" Content="Возвращает номер символа" Grid.Row="1"/>
+                                <RadioButton GroupName="q9" Content="Возвращает модуль числа" Grid.Column="1" Grid.Row="1"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// 10 Вопрос картинка /////////////////////////////////////////////////////////////-->
+                    <Border Grid.Column="0" Style="{StaticResource BorderPanel}" Width="1231" Height="462"
+                            Padding="30,0,30,0" Margin="20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Вопрос №10" Style="{StaticResource H2Label}"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Style="{StaticResource H3Label}" HorizontalAlignment="Left">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap">Вопрос: Сколько раз программа напишет слово "Пока"?
+                                        </TextBlock>
+                                    </Label.Content>
+                                </Label>
+
+                                <Image Source="/ResourcesFolder/Image/Test3/10.png" Grid.RowSpan="2"
+                                       Margin=" 20"/>
+
+
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <RadioButton GroupName="q10" Content="0"
+                                                 x:Name="AnsTen"/>
+                                    <RadioButton GroupName="q10" Content="9" Grid.Column="1"/>
+                                    <RadioButton GroupName="q10" Content="10" Grid.Row="1"/>
+                                    <RadioButton GroupName="q10" Content="Бесконечно" Grid.Column="1" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <!--////////////////////////////////////////////////////////// Конец /////////////////////////////////////////////////////////////-->
+                    <Button x:Name="SendBtn" Content="Отправить на проверку" Style="{StaticResource MenuBtn}" Height="100" Width="350"
+                            FontSize="24"
+                            Click="SendBtn_Click"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Border Grid.Row="2" Background="#484848">
+            <Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -46,18 +46,18 @@ namespace Pixel.Windows.KidFolder
 
         private void Test2Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Test2KidWindow test2KidWindow = new Test2KidWindow();
+            test2KidWindow.Show();
+            this.Close();
         }
 
         private void Test3Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Test3KidWindow test3KidWindow = new Test3KidWindow();
+            test3KidWindow.Show();
+            this.Close();
         }
 
-        private void Exit_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ClassMB.MBExit();
-        }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -68,7 +68,7 @@ namespace Pixel.Windows.KidFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ClassMB.MBExit();
         }
     }
 }

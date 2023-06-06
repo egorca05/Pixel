@@ -29,34 +29,72 @@ namespace Pixel.Windows.TeacherFolder
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (FirstNameTb.Text == null)
             {
-                var data = DBEntities.GetContext().PersonalData.Add(new PersonalData()
-                {
-                    LastName = LastNameTb.Text,
-                    FirstName = FirstNameTb.Text,
-                    MiddleName = MiddleNameTb.Text,
-                    DateOfBirth = Convert.ToDateTime(DateOfDP.Text),
-                    Phone = PhoneTb.Text,
-                    IdGroups = Int32.Parse(GroupCB.SelectedValue.ToString())
-                    
-                });
-                DBEntities.GetContext().SaveChanges();
-
-                DBEntities.GetContext().User.Add(new User()
-                {
-                    LoginUser = LoginTb.Text,
-                    PassworUser = PassworTb.Text,
-                    IdPersonalDataUser = data.IdPersonalData,
-                    IdRoleUser = 2
-                });
-                DBEntities.GetContext().SaveChanges();
-
-                ClassMB.MBinformation("Успешно");
+                ClassMB.MBerror("Не введено имя");
+                FirstNameTb.Focus();
             }
-            catch (Exception ex)
+            else if (LastNameTb.Text == null)
             {
-                ClassMB.MBerror(ex);
+                ClassMB.MBerror("Не введена фамилия");
+                LastNameTb.Focus();
+            }
+            else if (DateOfDP.Text == null)
+            {
+                ClassMB.MBerror("Не введена дата");
+                DateOfDP.Focus();
+            }
+            else if (PhoneTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен номер телефона");
+                PhoneTb.Focus();
+            }
+            else if (LoginTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен логин");
+                LoginTb.Focus();
+            }
+            else if (PassworTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен пароль");
+                PassworTb.Focus();
+            }
+            else if (GroupCB.SelectedValue == null)
+            {
+                ClassMB.MBerror("Не выбранна группа");
+                PassworTb.Focus();
+            }
+            else
+            {
+                try
+                {
+                    var data = DBEntities.GetContext().PersonalData.Add(new PersonalData()
+                    {
+                        LastName = LastNameTb.Text,
+                        FirstName = FirstNameTb.Text,
+                        MiddleName = MiddleNameTb.Text,
+                        DateOfBirth = Convert.ToDateTime(DateOfDP.Text),
+                        Phone = PhoneTb.Text,
+                        IdGroups = Int32.Parse(GroupCB.SelectedValue.ToString())
+
+                    });
+                    DBEntities.GetContext().SaveChanges();
+
+                    DBEntities.GetContext().User.Add(new User()
+                    {
+                        LoginUser = LoginTb.Text,
+                        PassworUser = PassworTb.Text,
+                        IdPersonalDataUser = data.IdPersonalData,
+                        IdRoleUser = 2
+                    });
+                    DBEntities.GetContext().SaveChanges();
+
+                    ClassMB.MBinformation("Успешно");
+                }
+                catch (Exception ex)
+                {
+                    ClassMB.MBerror(ex);
+                }
             }
         }
 

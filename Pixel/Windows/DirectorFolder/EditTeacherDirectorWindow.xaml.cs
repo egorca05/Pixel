@@ -45,26 +45,58 @@ namespace Pixel.Windows.DirectorFolder
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            User user = DBEntities.GetContext().User
+            if (FirstNameTb.Text == null)
+            {
+                ClassMB.MBerror("Не введено имя");
+                FirstNameTb.Focus();
+            }
+            else if (LastNameTb.Text == null)
+            {
+                ClassMB.MBerror("Не введена фамилия");
+                LastNameTb.Focus();
+            }
+            else if (DateOfBirthDP.Text == null)
+            {
+                ClassMB.MBerror("Не введена дата");
+                DateOfBirthDP.Focus();
+            }
+            else if (PhoneTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен номер телефона");
+                PhoneTb.Focus();
+            }
+            else if (LoginTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен логин");
+                LoginTb.Focus();
+            }
+            else if (PassworTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен пароль");
+                PassworTb.Focus();
+            }
+            else
+            {
+                User user = DBEntities.GetContext().User
                 .FirstOrDefault(u => u.IdUser == ClassGlobal.UserEdit);
-            user.LoginUser = LoginTb.Text;
-            user.PassworUser = PassworTb.Text;
-            user.PersonalData.FirstName = FirstNameTb.Text;
-            user.PersonalData.LastName = LastNameTb.Text;
-            user.PersonalData.MiddleName = MiddleNameTb.Text;
-            user.PersonalData.DateOfBirth = Convert.ToDateTime(DateOfBirthDP.Text);
-            user.PersonalData.Phone = PhoneTb.Text;
-            DBEntities.GetContext().SaveChanges();
+                user.LoginUser = LoginTb.Text;
+                user.PassworUser = PassworTb.Text;
+                user.PersonalData.FirstName = FirstNameTb.Text;
+                user.PersonalData.LastName = LastNameTb.Text;
+                user.PersonalData.MiddleName = MiddleNameTb.Text;
+                user.PersonalData.DateOfBirth = Convert.ToDateTime(DateOfBirthDP.Text);
+                user.PersonalData.Phone = PhoneTb.Text;
+                DBEntities.GetContext().SaveChanges();
 
-            ListTeachersDirectorWindow listTeachersDirectorWindow = new ListTeachersDirectorWindow();
-            listTeachersDirectorWindow.Show();
-            this.Close();
+                ListTeachersDirectorWindow listTeachersDirectorWindow = new ListTeachersDirectorWindow();
+                listTeachersDirectorWindow.Show();
+                this.Close();
 
-            //PersonalData personalData = DBEntities.GetContext().PersonalData
-            //    .FirstOrDefault(p => p.IdPersonalData == ClassGlobal.UserEdit);
+                //PersonalData personalData = DBEntities.GetContext().PersonalData
+                //    .FirstOrDefault(p => p.IdPersonalData == ClassGlobal.UserEdit);
 
-            //DBEntities.GetContext().SaveChanges();
-
+                //DBEntities.GetContext().SaveChanges();
+            }
         }
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)

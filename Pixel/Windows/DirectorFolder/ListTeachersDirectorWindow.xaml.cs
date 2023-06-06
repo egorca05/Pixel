@@ -50,12 +50,19 @@ namespace Pixel.Windows.DirectorFolder
 
         private void MoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            User user = TeacherData.SelectedItem as User;
-            ClassGlobal.UserEdit = user.IdUser;
+            if (TeacherData.SelectedItem == null)
+            {
+                ClassMB.MBerror("Не выбран пользователь");
+            }
+            else
+            {
+                User user = TeacherData.SelectedItem as User;
+                ClassGlobal.UserEdit = user.IdUser;
 
-            EditTeacherDirectorWindow editTeacherDirectorWindow = new EditTeacherDirectorWindow(TeacherData.SelectedItem as User);  
-            editTeacherDirectorWindow.Show();
-            this.Close();
+                EditTeacherDirectorWindow editTeacherDirectorWindow = new EditTeacherDirectorWindow(TeacherData.SelectedItem as User);
+                editTeacherDirectorWindow.Show();
+                this.Close();
+            }
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)

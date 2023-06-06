@@ -39,36 +39,82 @@ namespace Pixel.Windows.TeacherFolder
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            //User user = DBEntities.GetContext().User
-            //    .FirstOrDefault(u => u.IdUser == ClassGlobal.UserEdit);
-            User.LoginUser = LoginTb.Text;
-            User.PassworUser = PassworTb.Text;
-            User.PersonalData.FirstName = FirstNameTb.Text;
-            User.PersonalData.LastName = LastNameTb.Text;
-            User.PersonalData.MiddleName = MiddleNameTb.Text;
-            User.PersonalData.DateOfBirth = Convert.ToDateTime(DateOfDP.Text);
-            User.PersonalData.Phone = PhoneTb.Text;
-            User.PersonalData.IdGroups = (GroupCB.SelectedItem as Groups).IdGroups;
-            DBEntities.GetContext().SaveChanges();
+            if (FirstNameTb.Text == null)
+            {
+                ClassMB.MBerror("Не введено имя");
+                FirstNameTb.Focus();
+            }
+            else if (LastNameTb.Text == null)
+            {
+                ClassMB.MBerror("Не введена фамилия");
+                LastNameTb.Focus();
+            }
+            else if (DateOfDP.Text == null)
+            {
+                ClassMB.MBerror("Не введена дата");
+                DateOfDP.Focus();
+            }
+            else if (PhoneTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен номер телефона");
+                PhoneTb.Focus();
+            }
+            else if (LoginTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен логин");
+                LoginTb.Focus();
+            }
+            else if (PassworTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен пароль");
+                PassworTb.Focus();
+            }
+            else if (GroupCB.SelectedValue == null)
+            {
+                ClassMB.MBerror("Не выбранна группа");
+                PassworTb.Focus();
+            }
+            else
+            {
+                //User user = DBEntities.GetContext().User
+                //    .FirstOrDefault(u => u.IdUser == ClassGlobal.UserEdit);
+                User.LoginUser = LoginTb.Text;
+                User.PassworUser = PassworTb.Text;
+                User.PersonalData.FirstName = FirstNameTb.Text;
+                User.PersonalData.LastName = LastNameTb.Text;
+                User.PersonalData.MiddleName = MiddleNameTb.Text;
+                User.PersonalData.DateOfBirth = Convert.ToDateTime(DateOfDP.Text);
+                User.PersonalData.Phone = PhoneTb.Text;
+                User.PersonalData.IdGroups = (GroupCB.SelectedItem as Groups).IdGroups;
+                DBEntities.GetContext().SaveChanges();
 
+                GroupsWindow groupsWindow = new GroupsWindow();
+                groupsWindow.Show();
+                this.Close();
+            }
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
             GroupsWindow groupsWindow = new GroupsWindow();
             groupsWindow.Show();
             this.Close();
         }
 
-        private void backBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ClassMB.MBExit();
         }
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            bool resultMB = ClassMB.QuestionMessage("Вы действительно хотите выйти из аккаунта?");
+            if (resultMB == true)
+            {
+                AutorizationWindow autorizationWindow = new AutorizationWindow();
+                autorizationWindow.Show();
+                this.Close();
+            }
         }
     }
 }

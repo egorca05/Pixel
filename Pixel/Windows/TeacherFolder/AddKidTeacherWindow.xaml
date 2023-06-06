@@ -140,7 +140,7 @@
 
                     <TextBox                
                         x:Name="LoginTb"
-                        materialDesign:HintAssist.Hint="Телефон"
+                        materialDesign:HintAssist.Hint="Логин"
                         Grid.Column="5" Grid.Row="1"
                         FontSize="20"
                         VerticalContentAlignment="Center"

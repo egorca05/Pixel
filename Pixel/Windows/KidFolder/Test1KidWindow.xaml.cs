@@ -68,8 +68,7 @@ namespace Pixel.Windows.KidFolder
             if (AnsTen.IsChecked == true)
             {
                 TrueAnsver++;
-            }
-            //var kid = DBEntities.GetContext().User.FirstOrDefault(u => u.IdUser == ClassGlobal.UserId);
+            }            
             DBEntities.GetContext().Attempts.Add(new Attempts()
             {
                 IdUser = ClassGlobal.UserId,

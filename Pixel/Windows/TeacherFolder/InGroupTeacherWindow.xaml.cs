@@ -56,12 +56,20 @@ namespace Pixel.Windows.TeacherFolder
 
         private void MoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            PersonalData personalData = KidDG.SelectedItem as PersonalData;
-            ClassGlobal.KidEdit = personalData.IdPersonalData;
+            if (KidDG.SelectedItem == null)
+            {
+                ClassMB.MBerror("Не выбран пользователь");
+            }
+            else
+            {
+                PersonalData personalData = KidDG.SelectedItem as PersonalData;
+                ClassGlobal.KidEdit = personalData.IdPersonalData;
 
-            EditKidTeacherWindow editKidTeacherWindow = new EditKidTeacherWindow(KidDG.SelectedItem as PersonalData);
-            editKidTeacherWindow.Show();
-            this.Close();
+                EditKidTeacherWindow editKidTeacherWindow = new EditKidTeacherWindow(KidDG.SelectedItem as PersonalData);
+                editKidTeacherWindow.Show();
+                this.Close();
+            }
+
         }
 
         private void DelBtn_Click_1(object sender, RoutedEventArgs e)

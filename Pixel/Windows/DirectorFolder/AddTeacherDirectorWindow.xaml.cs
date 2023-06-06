@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,39 +29,71 @@ namespace Pixel.Windows.DirectorFolder
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (FirstNameTb.Text == null)
             {
-
-                var data = DBEntities.GetContext().PersonalData.Add(new PersonalData()
-                {
-                    LastName = LastNameTb.Text,
-                    FirstName = FirstNameTb.Text,
-                    MiddleName = MiddleNameTb.Text,
-                    DateOfBirth = Convert.ToDateTime(DOBDP.Text),
-                    Phone = PhoneTb.Text
-                });
-                DBEntities.GetContext().SaveChanges();
-
-                DBEntities.GetContext().User.Add(new User()
-                {
-                    LoginUser = LoginTb.Text,
-                    PassworUser = PassworTb.Text,
-                    IdPersonalDataUser = data.IdPersonalData,
-                    IdRoleUser = 1
-                });
-                DBEntities.GetContext().SaveChanges();
-
-                ClassMB.MBinformation("Успешно");
-
-                ListTeachersDirectorWindow listTeachersDirectorWindow = new ListTeachersDirectorWindow();
-                listTeachersDirectorWindow.Show();
-                this.Close();
+                ClassMB.MBerror("Не введено имя");
+                FirstNameTb.Focus();
             }
-            catch (Exception ex)
+            else if (LastNameTb.Text == null)
             {
-            ClassMB.MBerror(ex);
+                ClassMB.MBerror("Не введена фамилия");
+                LastNameTb.Focus();
             }
+            else if (DOBDP.Text == null)
+            {
+                ClassMB.MBerror("Не введена дата");
+                DOBDP.Focus();
+            }
+            else if (PhoneTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен номер телефона");
+                PhoneTb.Focus();
+            }
+            else if (LoginTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен логин");
+                LoginTb.Focus();
+            }
+            else if (PassworTb.Text == null)
+            {
+                ClassMB.MBerror("Не введен пароль");
+                PassworTb.Focus();
+            }
+            else
+            {
+                try
+                {
 
+                    var data = DBEntities.GetContext().PersonalData.Add(new PersonalData()
+                    {
+                        LastName = LastNameTb.Text,
+                        FirstName = FirstNameTb.Text,
+                        MiddleName = MiddleNameTb.Text,
+                        DateOfBirth = Convert.ToDateTime(DOBDP.Text),
+                        Phone = PhoneTb.Text
+                    });
+                    DBEntities.GetContext().SaveChanges();
+
+                    DBEntities.GetContext().User.Add(new User()
+                    {
+                        LoginUser = LoginTb.Text,
+                        PassworUser = PassworTb.Text,
+                        IdPersonalDataUser = data.IdPersonalData,
+                        IdRoleUser = 1
+                    });
+                    DBEntities.GetContext().SaveChanges();
+
+                    ClassMB.MBinformation("Успешно");
+
+                    ListTeachersDirectorWindow listTeachersDirectorWindow = new ListTeachersDirectorWindow();
+                    listTeachersDirectorWindow.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    ClassMB.MBerror(ex);
+                }
+            }
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
