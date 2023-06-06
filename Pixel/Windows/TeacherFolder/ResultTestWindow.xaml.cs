@@ -26,6 +26,10 @@ namespace Pixel.Windows.TeacherFolder
             InitializeComponent();
             ResultDG.ItemsSource = DBEntities.GetContext().Attempts.ToList().OrderBy(x => x.IdAttempts);
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {

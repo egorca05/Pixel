@@ -25,6 +25,10 @@ namespace Pixel.Windows.TeacherFolder
         {
             InitializeComponent();
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
         private void ResultBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -56,5 +60,10 @@ namespace Pixel.Windows.TeacherFolder
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClassMB.MBExit();
+
+        }
     }
 }

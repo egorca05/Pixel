@@ -36,6 +36,10 @@ namespace Pixel.Windows.TeacherFolder
             DateOfDP.SelectedDate = PersonalData.DateOfBirth;
 
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {

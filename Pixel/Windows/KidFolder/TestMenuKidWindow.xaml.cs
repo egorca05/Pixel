@@ -25,6 +25,10 @@ namespace Pixel.Windows.KidFolder
         {
             InitializeComponent();
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {

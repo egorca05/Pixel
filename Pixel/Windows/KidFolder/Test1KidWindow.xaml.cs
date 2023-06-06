@@ -82,5 +82,22 @@ namespace Pixel.Windows.KidFolder
             menuKidWindow.Show();
             this.Close(); 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClassMB.MBExit();
+        }
+
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TestMenuKidWindow testMenuKidWindow = new TestMenuKidWindow();
+            testMenuKidWindow.Show();
+            this.Close();
+        }
     }
 }

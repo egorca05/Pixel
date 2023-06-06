@@ -28,6 +28,10 @@ namespace Pixel.Windows.TeacherFolder
             KidDG.ItemsSource = DBEntities.GetContext().PersonalData.Where(k => k.IdGroups == Groups.IdGroups).ToList();
 
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
 
         private void backBtn_Click(object sender, RoutedEventArgs e)

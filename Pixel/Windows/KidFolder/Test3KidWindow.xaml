@@ -23,15 +23,47 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image Source="/ResourcesFolder/Image/Logo.png" 
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Button x:Name="backBtn" Background="{x:Null}" BorderBrush="{x:Null}"
+                            Click="backBtn_Click">
+                        <Image Source="/ResourcesFolder/Image/backBtn.png" 
+                               Width="49" Height="49"/>
+                    </Button>
+                    <Image Source="/ResourcesFolder/Image/Logo.png" 
                        Margin="20"
                        Height="49" Width="210"
                        HorizontalAlignment="Left"/>
+                </StackPanel>
                 <Label 
                     Content="Python Bot"
                     Grid.Column="1"
                     Style="{StaticResource LabelLogo}"/>
-
+                <StackPanel Grid.Column="2" Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button x:Name="RollUpBtn"
+                   Background="{x:Null}" BorderBrush="{x:Null}"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    VerticalAlignment="Top"                                 
+                    Margin="10"
+                    Height="30" Width="30"
+                    Click="RollUpBtn_Click"
+                    >
+                        <Image Source="/ResourcesFolder/Image/RollUp.png"
+                           Width="30" Height="30"/>
+                    </Button>
+                    <Button
+                   Background="{x:Null}" BorderBrush="{x:Null}"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Height="30" Width="30"
+                    Click="Button_Click"
+                    VerticalAlignment="Top">
+                        <Image Source="/ResourcesFolder/Image/Exit.png"
+                           Width="30" Height="30"/>
+                    </Button>
+                </StackPanel>
 
             </Grid>
         </Border>

@@ -355,6 +355,7 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
       <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="ResourcesFolder\Image\RollUp.png" />
     <Resource Include="ResourcesFolder\Image\Test3\10.png" />
     <Resource Include="ResourcesFolder\Image\Test3\6.png" />
     <Resource Include="ResourcesFolder\Image\Test3\5.png" />

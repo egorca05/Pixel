@@ -26,6 +26,10 @@ namespace Pixel.Windows.TeacherFolder
             InitializeComponent();
             DataContext = Groups;
         }
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {

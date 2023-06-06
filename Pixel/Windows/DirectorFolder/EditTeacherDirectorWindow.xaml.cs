@@ -98,7 +98,10 @@ namespace Pixel.Windows.DirectorFolder
                 //DBEntities.GetContext().SaveChanges();
             }
         }
-
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {
             bool resultMB = ClassMB.QuestionMessage("Вы действительно хотите выйти из аккаунта?");

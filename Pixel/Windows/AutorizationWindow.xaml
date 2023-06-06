@@ -42,6 +42,32 @@
                                      Foreground="White"
                                      Height="40" Width="40"
                                      VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <StackPanel Grid.Column="2" Orientation="Horizontal"
+                            HorizontalAlignment="Right" Grid.ColumnSpan="2">
+                <Button x:Name="RollUpBtn"
+                   Background="{x:Null}" BorderBrush="{x:Null}"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    VerticalAlignment="Top"                                 
+                    Margin="10"
+                    Height="30" Width="30"
+                    Click="RollUpBtn_Click"
+                    >
+                    <Image Source="/ResourcesFolder/Image/RollUp.png"
+                           Width="30" Height="30"/>
+                </Button>
+                <Button
+                   Background="{x:Null}" BorderBrush="{x:Null}"
+                    HorizontalAlignment="Right"
+                    Margin="10"
+                    Height="30" Width="30"
+                    Click="Button_Click"
+                    VerticalAlignment="Top">
+                    <Image Source="/ResourcesFolder/Image/Exit.png"
+                           Width="30" Height="30"/>
+                </Button>
+            </StackPanel>
             <TextBox                
                 x:Name="LoginTb"
                 materialDesign:HintAssist.Hint="Логин"

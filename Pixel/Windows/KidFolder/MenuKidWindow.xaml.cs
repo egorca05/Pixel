@@ -56,9 +56,19 @@ namespace Pixel.Windows.KidFolder
             ClassMB.MBExit();
         }
 
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
         private void ExitAppBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClassMB.MBExit();
         }
     }
 }

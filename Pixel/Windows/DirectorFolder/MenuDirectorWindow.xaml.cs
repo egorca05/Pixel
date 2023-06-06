@@ -53,6 +53,11 @@ namespace Pixel.Windows.DirectorFolder
             this.Close();
         }
 
+        private void RollUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
         private void ExitProfile_Click(object sender, RoutedEventArgs e)
         {
             AutorizationWindow autorizationWindow = new AutorizationWindow();
