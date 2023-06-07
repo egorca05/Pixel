@@ -94,9 +94,9 @@
     <Style TargetType="RadioButton">
         <Setter Property="FontWeight" Value="Regular"/>
         <Setter Property="FontSize" Value="24"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
